@@ -1,11 +1,8 @@
-package Jobsheet8;
-
 import java.util.Scanner;
 
 public class NilaiKelompok {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
         int i = 1;
         while (i <= 6) {
             System.out.println("Kelompok " + i);
