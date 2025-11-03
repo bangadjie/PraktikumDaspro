@@ -12,7 +12,7 @@ public class Tugas2{
             System.out.println(" ");
         }
 
-        System.out.println("_____");
+        System.out.println("------");
 
         int N = 5;
         for(int i = 1; i <= N; i++) {
