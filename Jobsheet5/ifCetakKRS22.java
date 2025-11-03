@@ -22,5 +22,6 @@ public class ifCetakKRS22 {
 
         System.out.println("\n=== Versi Ternary Operator ===");
         System.out.println(hasil);
+        sc.close();
     }
 }

@@ -28,5 +28,6 @@ public class ifElseCetakKRS22 {
         }else{
             System.out.println("Semester Tidak Valid");
         }
+        sc.close();
     }
 }

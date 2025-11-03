@@ -6,8 +6,8 @@ public class Latihan1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("===Selamat datang di perpustakaan kampus===");
-        System.out.println("Masuk Perpustakaan (Ktm/Register)");
+        System.out.println("===Selamat datang di perpustakaan kampus===");
+        System.out.println("Kehadiran Perpustakaan (Ktm/Register)");
         String Kehadiran = sc.nextLine();
 
         if (Kehadiran.equalsIgnoreCase("ktm")) {
@@ -15,7 +15,7 @@ public class Latihan1 {
         }else if(Kehadiran.equalsIgnoreCase("Register")){
             System.out.println("Anda berhasil masuk menggunakan Register");
         }else{
-            System.out.println("Anda tidak terdaftar");
+            System.out.println("Anda tidak dapat masuk");
         }
     }
 }
