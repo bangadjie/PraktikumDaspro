@@ -19,7 +19,7 @@ public class Bioskop22 {
 
         System.out.println(penonton.length);
         for(int i = 0; i < penonton.length; i++) {
-            System.out.println("Panjang baris ke-" + (i+1) + ": " + penonton[i].length);
+            System.out.println("Panjang baris ke-" + (i+1) + " : " + penonton[i].length);
         }
     }
 }
