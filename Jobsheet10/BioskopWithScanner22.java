@@ -1,7 +1,5 @@
 import java.util.Scanner;
-
 public class BioskopWithScanner22 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[][] penonton = new String[4][2];
@@ -79,7 +77,7 @@ public class BioskopWithScanner22 {
                 }
             } else if (menu == 3) {
                 System.out.println("Terima kasih. Program selesai.");
-                break; 
+                break; // Keluar dari loop while(true)
             } else {
                 System.out.println("Menu tidak valid. Harap pilih 1, 2, atau 3.");
             }
