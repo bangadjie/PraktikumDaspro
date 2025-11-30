@@ -3,13 +3,13 @@ package Jobsheet11;
 import java.util.Scanner;
 
 public class Kafe22 {
-    public static void Menu(String namaPelanggan, String kodePromo, boolean isMember){
+    public static void Menu(String namaPelanggan, String kodePromo, boolean isMember) {
         System.out.println("Selamat datang " + namaPelanggan + "!");
         if (kodePromo == "DISKON50") {
             System.out.println("Selamat kamu mendapatkan diskon 50%");
-        }else if (kodePromo == "DISKON30") {
+        } else if (kodePromo == "DISKON30") {
             System.out.println("Selamat kamu mendapatkan diskon 50%");
-        }else{
+        } else {
             System.out.println("Kode Invalid");
         }
 
@@ -28,8 +28,8 @@ public class Kafe22 {
         System.out.println("Silahkan pilih menu yang Anda inginkan.");
     }
 
-    public static int hitungTotalHarga22(int pilihanMenu, int banyakItem, String kodePromo){
-        int [] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
+    public static int hitungTotalHarga22(int pilihanMenu, int banyakItem, String kodePromo) {
+        int[] hargaItems = { 15000, 20000, 22000, 12000, 10000, 18000 };
 
         int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
         // return hargaTotal;
@@ -38,10 +38,10 @@ public class Kafe22 {
         if (kodePromo.equalsIgnoreCase("DISKON50")) {
             diskon = hargaTotal * 50 / 100;
             System.out.println("Skamu mendapatkan diskon menjadi " + diskon);
-        }else if (kodePromo.equalsIgnoreCase("DISKON30")) {
+        } else if (kodePromo.equalsIgnoreCase("DISKON30")) {
             diskon = hargaTotal * 30 / 100;
-            System.out.println("Skamu mendapatkan diskon menjadi " + diskon);
-        }else{
+            System.out.println("kamu mendapatkan diskon menjadi " + diskon);
+        } else {
             System.out.println("Kode Invalid");
         }
 
@@ -50,19 +50,26 @@ public class Kafe22 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+
         System.out.println("Masukkan kode Promo");
         String kodePromo = sc.nextLine();
 
-        Menu("Andi", kodePromo , true);
+        Menu("Andi", kodePromo, true);
 
-        System.out.println("\nMasukkan nomor menu yang ingin Anda pesan: ");
-        int pilihanMenu = sc.nextInt();
-        System.out.println("Masukkan jumlah item yang ingin dipesan: ");
-        int banyakItem = sc.nextInt();
+        while (true) {
+            System.out.print("Masukkan nomor menu (0 untuk menyelesaikan pesanan: )");
+            int pilihanMenu = sc.nextInt();
+            if (pilihanMenu == 0) {
+                break;
+            }
+            System.out.print("Masukkan jumlah item yang ingin dipesan: ");
+            int banyakItem = sc.nextInt();
 
-        int totalHarga = hitungTotalHarga22(pilihanMenu, banyakItem, kodePromo);
+            int totalHarga = hitungTotalHarga22(pilihanMenu, banyakItem, kodePromo);
 
-        System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
+            System.out.println("Total harga untuk pesanan Anda: Rp" + totalHarga);
+
+        }
+
     }
 }
