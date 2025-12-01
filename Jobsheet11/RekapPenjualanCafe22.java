@@ -3,16 +3,33 @@ package Jobsheet11;
 import java.util.Scanner;
 
 public class RekapPenjualanCafe22 {
-    static String[] menu = {"Kopi", "Teh", "Es Kelapa Muda", "Roti Bakar", "Gorengan"};
+    static String[] menu;
     static int[][] penjualan = new int[5][7];
 
     static void inputData() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("=== INPUT DATA PENJUALAN ===");
 
-        for (int i = 0; i < menu.length; i++) {
+        System.out.print("Masukkan jumlah menu            : ");
+        int jumlahMenu = sc.nextInt();
+        sc.nextLine(); 
+
+        System.out.print("Masukkan jumlah hari penjualan  : ");
+        int jumlahHari = sc.nextInt();
+        sc.nextLine();
+
+        menu = new String[jumlahMenu];
+        penjualan = new int[jumlahMenu][jumlahHari];
+
+        System.out.println("\n=== INPUT NAMA MENU ===");
+        for (int i = 0; i < jumlahMenu; i++) {
+            System.out.print("Nama menu ke-" + (i + 1) + ": ");
+            menu[i] = sc.nextLine();
+        }
+        System.out.println("\n=== INPUT DATA PENJUALAN ===");
+
+        for (int i = 0; i < jumlahMenu; i++) {
             System.out.println("\nMenu: " + menu[i]);
-            for (int h = 0; h < 7; h++) {
+            for (int h = 0; h < jumlahHari; h++) {
                 System.out.print("  Hari ke-" + (h + 1) + ": ");
                 penjualan[i][h] = sc.nextInt();
             }
@@ -69,8 +86,8 @@ public class RekapPenjualanCafe22 {
             System.out.printf("%-15s : %.2f\n", menu[i], rata);
         }
     }
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         inputData();
         tampilkanTabel();
         menuTertinggi();
